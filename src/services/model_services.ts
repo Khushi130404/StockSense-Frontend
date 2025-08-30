@@ -1,45 +1,3 @@
-// import axios from "axios";
-// // import { AxiosError } from "axios";
-// // import type { AxiosError } from "axios";
-
-// const BASE_URL = "http://127.0.0.1:8001";
-
-// // const MODEL_BASE_URL = `${BASE_URL}/get_chart_data`;
-// const CHART_DATA_API = `${BASE_URL}/forecast_chart_data`;
-
-// // const DIAGNOS_ADD_API = `${BASE_URL}/diagnosis/addDiagnos`;
-// // const DIAGNOS_GET_API = `${BASE_URL}/diagnosis/getDiagnosis`;
-
-// interface DiagnosisFormData {
-//   [key: string]: any; // Update with actual structure if known
-// }
-
-// // interface ApiErrorResponse {
-// // //   message?: string;
-// //   error?: string;
-// // }
-
-// export const  getForecastChartData  = async (
-//   ticker : string,
-// //   formData: DiagnosisFormData
-// ): Promise<void> => {
-//   try {
-//     console.log("In Diag Service");
-//     await axios.post(`${CHART_DATA_API}/${ticker}`);
-
-
-//     console.log("Upload successful");
-//   } catch (err) {
-//     // const err = error as AxiosError<ApiErrorResponse>;
-//     console.error(
-//       "Upload error:",
-//       err.response?.data || "Something went wrong!"
-//     );
-//     throw err.response?.data || "Something went wrong!";
-//   }
-// };
-
-
 import axios from "axios";
 // import type { AxiosError } from "axios";
 
@@ -59,7 +17,7 @@ interface ApiErrorResponse {
 }
 
 export const getForecastChartData = async (
-  ticker: string,
+  ticker: string
   // formData: DiagnosisFormData // Not used for a GET request
 ): Promise<void> => {
   try {
