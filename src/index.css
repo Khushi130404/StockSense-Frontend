@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* StockSense Premium Design System - Trading Platform Aesthetics */
+
+@layer base {
+  :root {
+    /* Light theme colors */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217.2 91.2% 59.8%;
+    
+    /* Trading specific colors */
+    --profit: 142 76% 36%;
+    --profit-foreground: 0 0% 100%;
+    --loss: 0 84% 60%;
+    --loss-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Premium gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217.2 91.2% 59.8%), hsl(224 76% 48%));
+    --gradient-profit: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 69% 58%));
+    --gradient-loss: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 72% 51%));
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    
+    /* Glass morphism */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme - Premium trading platform aesthetics */
+    --background: 217.2 32.6% 3.5%;
+    --foreground: 210 40% 98%;
+    --card: 217.2 32.6% 8%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217.2 32.6% 8%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 15%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 15%;
+    --input: 217.2 32.6% 15%;
+    --ring: 217.2 91.2% 59.8%;
+    
+    /* Trading specific colors for dark theme */
+    --profit: 142 69% 58%;
+    --profit-foreground: 222.2 84% 4.9%;
+    --loss: 0 84% 60%;
+    --loss-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 222.2 84% 4.9%;
+    
+    /* Dark theme gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217.2 91.2% 59.8%), hsl(224 76% 48%));
+    --gradient-profit: linear-gradient(135deg, hsl(142 69% 58%), hsl(142 76% 36%));
+    --gradient-loss: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 72% 51%));
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    
+    /* Dark glass morphism */
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Default to dark theme */
+  html {
+    @apply dark;
+  }
+}
+
+@layer components {
+  /* Premium Glass Card */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  /* Trading specific variants */
+  .profit-gradient {
+    background: var(--gradient-profit);
+  }
+  
+  .loss-gradient {
+    background: var(--gradient-loss);
+  }
+  
+  .primary-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  /* Theme toggle animation */
+  .theme-toggle {
+    @apply relative inline-flex h-6 w-11 items-center rounded-full border-2 border-transparent transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .theme-toggle-thumb {
+    @apply inline-block h-4 w-4 transform rounded-full transition-transform duration-300;
+  }
+  
+  /* Smooth transitions */
+  .smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Stock price animations */
+  .price-up {
+    @apply text-green-500 animate-pulse;
+  }
+  
+  .price-down {
+    @apply text-red-500 animate-pulse;
+  }
+  
+  /* Chart hover effects */
+  .chart-hover {
+    @apply transition-all duration-200 hover:scale-105 hover:shadow-lg;
+  }
+}
